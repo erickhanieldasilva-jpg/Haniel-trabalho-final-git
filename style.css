@@ -1,0 +1,538 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #e8e2d6;
+    color: #292720;
+    font-family: Arial, Helvetica, sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+
+/* HEADER */
+
+header {
+    width: 100%;
+    padding: 24px 4vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+    z-index: 10;
+
+    border-bottom: 1px solid rgba(41, 39, 32, 0.25);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+nav {
+    display: flex;
+    gap: 35px;
+}
+
+nav a {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    transition: opacity 0.2s ease;
+}
+
+nav a:hover {
+    opacity: 0.45;
+}
+
+
+/* INÍCIO */
+
+.inicio {
+    min-height: 88vh;
+    padding: 8vw 4vw;
+
+    display: flex;
+    align-items: flex-end;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.inicio::before {
+    content: "";
+    position: absolute;
+
+    width: 55vw;
+    height: 55vw;
+
+    right: -20vw;
+    top: -20vw;
+
+    border: 1px solid rgba(41, 39, 32, 0.18);
+    border-radius: 50%;
+}
+
+.inicio::after {
+    content: "SC • 2026";
+
+    position: absolute;
+    right: 4vw;
+    bottom: 4vw;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+    writing-mode: vertical-rl;
+}
+
+.inicio-texto {
+    position: relative;
+    z-index: 2;
+}
+
+.inicio h1 {
+    font-size: clamp(80px, 16vw, 240px);
+    line-height: 0.75;
+    letter-spacing: -0.09em;
+    font-weight: 900;
+
+    transform: translateX(-7px);
+}
+
+.inicio p {
+    margin-top: 35px;
+
+    max-width: 420px;
+
+    font-size: 15px;
+    line-height: 1.5;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 30px;
+    padding: 14px 22px;
+
+    border: 1px solid #292720;
+
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+.botao:hover {
+    background: #292720;
+    color: #e8e2d6;
+}
+
+
+/* COLEÇÃO */
+
+.colecao {
+    padding: 12vw 4vw;
+    background: #d7d0c2;
+}
+
+.titulo {
+    margin-bottom: 60px;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    border-bottom: 1px solid rgba(41, 39, 32, 0.3);
+    padding-bottom: 20px;
+}
+
+.titulo p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.titulo h2 {
+    font-size: clamp(50px, 8vw, 110px);
+    line-height: 0.8;
+    letter-spacing: -0.07em;
+}
+
+
+/* PRODUTOS */
+
+.produtos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+}
+
+.produto {
+    position: relative;
+}
+
+.produto img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    background: #bbb4a5;
+
+    filter: saturate(0.65) contrast(0.95);
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+.produto:hover img {
+    transform: translateY(-8px);
+    filter: saturate(0.85) contrast(1);
+}
+
+.produto h3 {
+    margin-top: 15px;
+
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.produto p {
+    margin-top: 6px;
+
+    font-size: 12px;
+    opacity: 0.65;
+}
+
+
+/* SOBRE */
+
+.sobre {
+    padding: 12vw 4vw;
+
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 8vw;
+
+    align-items: center;
+
+    background: #e8e2d6;
+}
+
+.sobre-imagem {
+    position: relative;
+}
+
+.sobre-imagem::after {
+    content: "MARASMO";
+
+    position: absolute;
+
+    bottom: 20px;
+    left: 20px;
+
+    padding: 8px 12px;
+
+    background: #292720;
+    color: #e8e2d6;
+
+    font-size: 10px;
+    letter-spacing: 3px;
+}
+
+.sobre-imagem img {
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+
+    filter: saturate(0.55);
+}
+
+.sobre-texto {
+    max-width: 520px;
+}
+
+.sobre-texto > p:first-child {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.sobre h2 {
+    margin: 25px 0 35px;
+
+    font-size: clamp(45px, 6vw, 90px);
+    line-height: 0.88;
+
+    letter-spacing: -0.07em;
+}
+
+.sobre-texto p:not(:first-child) {
+    max-width: 430px;
+
+    margin-top: 18px;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* DESTAQUE */
+
+.destaque {
+    min-height: 75vh;
+
+    padding: 8vw 4vw;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+
+    background: #788276;
+    color: #e8e2d6;
+
+    position: relative;
+    overflow: hidden;
+}
+
+.destaque::before {
+    content: "";
+
+    position: absolute;
+
+    width: 70vw;
+    height: 70vw;
+
+    border: 1px solid rgba(232, 226, 214, 0.3);
+    border-radius: 50%;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.destaque div {
+    position: relative;
+    z-index: 2;
+}
+
+.destaque p {
+    font-size: 11px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+
+.destaque h2 {
+    margin-top: 25px;
+
+    font-size: clamp(60px, 10vw, 150px);
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+}
+
+.destaque .botao {
+    border-color: #e8e2d6;
+}
+
+.destaque .botao:hover {
+    background: #e8e2d6;
+    color: #788276;
+}
+
+
+/* CONTATO */
+
+.contato {
+    padding: 10vw 4vw;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+
+    background: #b4b8b0;
+}
+
+.contato > div:first-child p {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+
+.contato h2 {
+    margin-top: 20px;
+
+    font-size: clamp(60px, 9vw, 130px);
+    line-height: 0.8;
+
+    letter-spacing: -0.08em;
+}
+
+.contato-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+
+    gap: 15px;
+}
+
+.contato-links a {
+    font-size: 18px;
+
+    border-bottom: 1px solid #292720;
+    padding-bottom: 5px;
+
+    transition: padding 0.2s ease;
+}
+
+.contato-links a:hover {
+    padding-left: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+    padding: 30px 4vw;
+
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+
+    border-top: 1px solid rgba(41, 39, 32, 0.3);
+
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+footer > p:last-child {
+    text-align: right;
+}
+
+footer div {
+    display: flex;
+    gap: 25px;
+}
+
+
+/* RESPONSIVO */
+
+@media (max-width: 800px) {
+
+    header {
+        padding: 20px;
+    }
+
+    nav {
+        gap: 15px;
+    }
+
+    nav a {
+        font-size: 10px;
+    }
+
+
+    .inicio {
+        min-height: 75vh;
+        padding: 60px 20px;
+    }
+
+    .inicio h1 {
+        font-size: clamp(65px, 18vw, 140px);
+    }
+
+
+    .colecao,
+    .sobre,
+    .contato {
+        padding: 80px 20px;
+    }
+
+
+    .titulo {
+        display: block;
+    }
+
+    .titulo h2 {
+        margin-top: 20px;
+    }
+
+
+    .produtos {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+
+    .produto img {
+        aspect-ratio: 1 / 1;
+    }
+
+
+    .sobre {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+
+    .sobre h2 {
+        font-size: 55px;
+    }
+
+
+    .destaque {
+        min-height: 60vh;
+    }
+
+    .destaque h2 {
+        font-size: 65px;
+    }
+
+
+    .contato {
+        grid-template-columns: 1fr;
+    }
+
+
+    footer {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    footer > p:last-child {
+        text-align: left;
+    }
+
+}
+
